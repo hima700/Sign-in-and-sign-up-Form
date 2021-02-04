@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <script>
+        function validate() {
+            var x = document.getElementById("password").value;
+            var y = document.getElementById("cpassword").value;
+            if (x != y) {
+                alert("Your passwords do not match.Please re-enter password!");
+                return false;
+            }
+
+        }
+
+    </script>
+</head>
+
+<style>
+    body {
+        border-style: double;
+        color: rgb(117, 93, 62);
+        background: rgb(135, 185, 202);
+
+    }
+
+
+    div.a {
+
+        display: flex;
+        font-size: x-large;
+        margin-left: 15px;
+    }
+
+    div.a input {
+        margin: 5px 10px 5px 0;
+        padding: 10px;
+        mix-blend-mode: hard-light;
+    }
+
+    div.vertical {
+        border-left: 3px double rgb(117, 93, 62);
+        height: 670px;
+        position: absolute;
+        left: 49%;
+        top: 62;
+    }
+
+    div.rightside {
+        margin-left: 560px;
+    }
+</style>
+
+<body>
+    <h1 style=" margin-left: 515px; top:10px; font-size: xx-large;">
+        Don't have an account? No worries.
+    </h1>
+    <h1 style=" margin-left: 770px; top:-10px; font-size: xx-large;">
+        Sign up here!
+    </h1>
+
+
+    <div class="a">
+
+        <form name="Myform1" action="login.php" method="post">
+
+            <label for="email">E-mail:</label><br>
+            <input type="text" id="email" name="email" required="required" placeholder="Enter email"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email!"><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="password1" name="password1" required="required" placeholder="Enter password"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+                title="Password must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters"><br>
+
+            <input type="submit" value="Sign in"><br>
+
+        </form>
+
+        <div class="vertical"></div>
+
+        <div class="rightside">
+            <form name="Myform" action="registration.php" onsubmit="return validate()" method="post">
+
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required="required" placeholder="Enter name"
+                    pattern="[a-zA-Z\s]+" title="Please enter a valid name!"><br>
+
+                <label for="email">E-mail:</label><br>
+                <input type="text" id="email" name="email" required="required" placeholder="Enter email"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email!"><br>
+
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" required="required" placeholder="Enter password"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+                    title="Password must contain at least one  number and one uppercase and lowercase letter, and at least 6 or more characters"><br>
+
+                <label for="cpassword">Comfirm Password:</label><br>
+                <input type="password" id="cpassword" name="cpassword" placeholder="Re-enter password"
+                    required="required"><br>
+
+                <input type="submit" value="Sign up"><br>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
